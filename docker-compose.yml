@@ -1,0 +1,39 @@
+services:
+  api:
+    build:
+      context: ./api
+    env_file:
+      - .env
+    restart: on-failure
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    volumes:
+      - documents:/usr/nimbus
+
+  web:
+    build:
+      context: ./web
+    env_file:
+      - .env
+    restart: on-failure
+    ports:
+      - "8501:8501"
+    volumes:
+      - documents:/usr/nimbus
+
+  db:
+    image: postgres:16
+    env_file:
+      - .env
+    environment:
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_USER: ${DB_USERNAME}
+      POSTGRES_DB: ${DB_NAME}
+    ports:
+      - 5432:5432
+
+volumes:
+  db:
+  documents:

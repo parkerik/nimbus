@@ -1,0 +1,8 @@
+databases[asyncpg]
+fastapi==0.112.0
+numpy
+orjson
+pandas
+python-dotenv
+python-multipart
+uvicorn[standard]
