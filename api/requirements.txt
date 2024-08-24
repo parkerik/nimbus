@@ -1,9 +1,11 @@
 databases[asyncpg]
-fastapi==0.112.0
+fastapi==0.112
 numpy
 orjson
 pandas
-pydantic
+pydantic==2.8
+pydantic-settings==2.4
+pydantic-core==2.20
 python-dotenv
 python-multipart
 uvicorn[standard]
