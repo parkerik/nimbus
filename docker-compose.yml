@@ -5,7 +5,7 @@ services:
       x-bake:
         platforms:
           - linux/arm64
-          - linux/armv7
+          - linux/arm32v7
     env_file:
       - .env
     restart: on-failure
@@ -22,7 +22,7 @@ services:
       x-bake:
         platforms:
           - linux/arm64
-          - linux/armv7
+          - linux/arm32v7
     env_file:
       - .env
     restart: on-failure
