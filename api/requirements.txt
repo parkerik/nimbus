@@ -3,6 +3,7 @@ fastapi==0.112.0
 numpy
 orjson
 pandas
+pydantic
 python-dotenv
 python-multipart
 uvicorn[standard]
