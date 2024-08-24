@@ -2,6 +2,10 @@ services:
   api:
     build:
       context: ./api
+      x-bake:
+        platforms:
+          - linux/arm64
+          - linux/armv7
     env_file:
       - .env
     restart: on-failure
@@ -15,6 +19,10 @@ services:
   web:
     build:
       context: ./web
+      x-bake:
+        platforms:
+          - linux/arm64
+          - linux/armv7
     env_file:
       - .env
     restart: on-failure
